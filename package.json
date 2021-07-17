@@ -1,0 +1,30 @@
+{
+  "name": "article-preview-component",
+  "version": "1.0.0",
+  "description": "![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khazin/Article-preview-component.git"
+  },
+  "author": "khazin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khazin/Article-preview-component/issues"
+  },
+  "homepage": "https://github.com/khazin/Article-preview-component#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.0.1",
+    "gulp-webp": "^4.0.1",
+    "node-sass": "^6.0.1",
+    "sass": "^1.35.2"
+  }
+}
