@@ -1,9 +1,236 @@
-*,*::before,*::after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+/************
+GLOBAL STYLES
+*************/
+:root {
+  /*colors*/
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  /*fonts*/
+  --manrope-sans: "Manrope", sans-serif;
+}
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-size: 62.5%;
+  font-family: var(--manrope-sans);
 }
 
 body {
-    font-size: 62.5%;
+  @include center;
+}
+
+/************
+MOBILE LAYOUT
+*************/
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--light-grayish-blue);
+
+  @include center;
+}
+
+.article {
+  min-height: 77vh;
+  width: 85%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 19.8rem auto;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 21px 22px -7px rgba(0, 0, 0, 0.05);
+}
+
+/*header image style*/
+.image {
+  width: 100%;
+  background-image: url(../../images/drawers.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -1rem;
+
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+/*article body style*/
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 3.1rem;
+  background-color: white;
+
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+/*article content style*/
+
+.content {
+  &--title {
+    font-size: 1.6rem;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+    line-height: 2.4rem;
+    margin-bottom: 1rem;
+  }
+  &--paragraph {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: var(--desaturated-dark-blue);
+  }
+}
+
+/*article footer style*/
+.footer {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.writer {
+  display: grid;
+  display: none;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "image name" "image date";
+  align-items: center;
+  &--image {
+    grid-area: image;
+    height: 4rem;
+    width: 4rem;
+    background-image: url(../../images/avatar-michelle.jpg);
+    background-size: cover;
+    border-radius: 50%;
+  }
+  &--name {
+    grid-area: name;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+  }
+  &--date {
+    grid-area: date;
+    font-size: 1.3rem;
+    color: var(--grayish-blue);
+  }
+}
+.bg-active{
+  background-color: var(--very-dark-grayish-blue);
+}
+.social {
+  // display: none;
+  display: flex;
+width: 100%;
+  &--title{
+
+  }
+  &--icon{
+    
+    &-1{
+
+    }
+    &-2{
+      
+    }
+    &-3{
+      
+    }
+  }
+}
+.forward {
+  @include center;
+  height: 4rem;
+  width: 3rem;
+  &--icon {
+    height: 3rem;
+    width: 3rem;
+    background-image: url(../../images/icon-share.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--light-grayish-blue);
+    border-radius: 50%;
+  }
+}
+/*************
+DESKTOP LAYOUT
+**************/
+@media screen and (min-width: 1366px) {
+  .article {
+    min-height: 34vh;
+    width: 50.5%;
+
+    display: grid;
+    grid-template-columns: 27rem auto;
+    grid-template-rows: 27rem;
+  }
+
+  /*header image style*/
+  .image {
+    background-position-y: 0rem;
+
+    border-top-right-radius: initial;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+
+  /*article body style*/
+
+  .body {
+    @include center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 3rem 3.5rem;
+
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: initial;
+  }
+
+  /*article content style*/
+
+  .content {
+    &--title {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /*article footer style*/
+  .footer {
+    width: 100%;
+  }
+  .social {
+    display: none;
+  }
+
+}
+/*****************
+ATTRIBUTION STYLES
+******************/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
